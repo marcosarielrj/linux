@@ -2,10 +2,10 @@
 
 Comandos linux
 
-sudo su - acessa root.
-su nomedousuário - loga no usuário
-cat - exibe um arquivo
-comando --help acessa ajuda do comando
+* sudo su - acessa root.
+* su nomedousuário - loga no usuário
+* cat - exibe um arquivo
+* comando --help acessa ajuda do comando
 
 Manipular pastas e arquivos: 
 
