@@ -1,3 +1,5 @@
+
+
 Comandos linux
 
 sudo su - acessa root.
@@ -17,28 +19,11 @@ Scripts:
 
 para criar um script - a extensão do arquivo tem que ser .sh
 
-primeira - linha de scripts tem que ser 
+primeira - linha de scripts tem que ser #!/bin/bash
 
 script para adicionar usuários em lote
 
 #!/bin/bash
-
-echo "Criando usuários no sistema"
-
-useradd guest5 -c "Usuário Convidado" -m -s /bin/bash -p $(openssl passwd -crypt sennha123) - senha atual capital00
-passwd guest5 -e
-
-useradd guest6 -c "Usuário Convidado" -m -s /bin/bash -p $(openssl passwd -crypt sennha123)
-passwd guest6 -e
-
-useradd guest8 -c "Usuário Convidado" -m -s /bin/bash -p $(openssl passwd -crypt sennha123)
-passwd guest8 -e
-
-useradd guest7 -c "Usuário Convidado" -m -s /bin/bash -p $(openssl passwd -crypt sennha123)
-passwd guest7 -e
-
-echo "Finalizado"
-
 
 Gerenciando usuários:
 
