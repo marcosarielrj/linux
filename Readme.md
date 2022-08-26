@@ -23,8 +23,6 @@ primeira - linha de scripts tem que ser #!/bin/bash
 
 script para adicionar usuários em lote
 
-#!/bin/bash
-
 Gerenciando usuários:
 
 listar usuários - cat /etc/passwd
