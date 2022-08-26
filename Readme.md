@@ -44,5 +44,5 @@ parâmetros: 	-m - cria a pasta home do usuário
 parâmetros: 	-f - força a exclusão
 		-r - remove a pasta usuário de /home
 
-*definir shell do usuário se não foi definido na criação - chsh -s /bin/bash nomedousuario
+* definir shell do usuário se não foi definido na criação - chsh -s /bin/bash nomedousuario
 
