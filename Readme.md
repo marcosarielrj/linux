@@ -4,15 +4,17 @@
 
 * sudo su - acessa root.
 * su nomedousuário - loga no usuário
-* cat - exibe um arquivo
+* cat - exibe um arquivo - ex: cat teste.txt
 * comando --help acessa ajuda do comando
-* nano - editor de texto padrão - nano nomedoarquivo - para criar um arquivo de texto
+* nano - editor de texto padrão - nano nomedoarquivo - para criar/abrir um arquivo de texto usando o editor
+* touch - cria um arquivo - ex: touch teste.txt
 
 # Manipular pastas e arquivos: 
 
 * ls - exibe os arquivos da pasta. ls -l aparece em lista os arquivos e pastas e suas características e permissões.
 * mkdir - cria uma pasta
 * cd - abre uma pasta - cd .. abri uma pasta um nível acima
+* rm - remove um arquivo/pasta - ex: rm teste.txt
 
 # Scripts:
 
@@ -66,7 +68,12 @@ ls -l - exibe as atributos dos arquivos e pastas do diretório em questão
 	- Três intermediários a permissão do grupo sobre o arquivo/pasta wrx
 	- Três finais a permissão de qualquer usuário wrx
 	- ex: -rw-r--r-- 
-*  
+* Alterar dono de pasta/arquivo - logado como root
+	- chown nomedousuario:nomedogrupo /nomedapastaarquivo/ - ex: chown joao:GRP_ADM /vendas/
+* Alterar permissões de pasta/arquivo - logado como root
+	- Leitura(R) valor 4 / Gravação(W) valor 2 / Execução(X) valor 1 / Nenhum(-) valor 0 
+	- Somasse os valores ao definir - dono/grupo/todos - ex: 750
+	- chmod dono/grupo/todos /pasta/ - ex: chmode 750 /teste/ - o dono tem todas porque soma os valores 4+2+1, o grupo tem leitura e execução 4+1, e todos tem nenhuma permissão 0
+	- 
 	 
-	
 
