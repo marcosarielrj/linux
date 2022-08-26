@@ -6,16 +6,15 @@ Comandos linux
 * su nomedousuário - loga no usuário
 * cat - exibe um arquivo
 * comando --help acessa ajuda do comando
+* nano - editor de texto padrão - nano nomedoarquivo - para criar um arquivo de texto
 
 Manipular pastas e arquivos: 
 
-ls - exibe os arquivos da pasta. ls -l aparece em lista os arquivos e pastas
-mkdir - cria uma pasta
-cd - abre uma pasta - cd .. abri uma pasta um nível acima
+* ls - exibe os arquivos da pasta. ls -l aparece em lista os arquivos e pastas
+* mkdir - cria uma pasta
+* cd - abre uma pasta - cd .. abri uma pasta um nível acima
 
-nano - editor de texto padrão - nano nomedoarquivo - para criar um arquivo de texto
-
-Scripts:
+h1 Scripts:
 
 para criar um script - a extensão do arquivo tem que ser .sh
 
