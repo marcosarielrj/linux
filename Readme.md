@@ -10,7 +10,7 @@
 
 # Manipular pastas e arquivos: 
 
-* ls - exibe os arquivos da pasta. ls -l aparece em lista os arquivos e pastas
+* ls - exibe os arquivos da pasta. ls -l aparece em lista os arquivos e pastas e suas características e permissões.
 * mkdir - cria uma pasta
 * cd - abre uma pasta - cd .. abri uma pasta um nível acima
 
@@ -27,7 +27,7 @@ Usuários no servidor linux realizam manutenções ou consomem recursos do mesmo
 * listar usuários - cat /etc/passwd
 * listar grupos - cat /etc/group
 * criptografar uma senha - openssl passwd -crypt senha 
-* criar usuário - useradd nomedousuario - não cria pasta do usuário nem define senha.
+* Criar usuário - useradd nomedousuario - não cria pasta do usuário nem define senha.
 
 	- parâmetros:
 	- -m - cria a pasta home do usuário
@@ -37,18 +37,36 @@ Usuários no servidor linux realizam manutenções ou consomem recursos do mesmo
 	- -e - define data de expiração do usuário
 	- -p - definir senha - $(openssl passwd -crypt senha123) - abre e fecha parenteses depois do cifrão.
 	
-	- ex: useradd joao -m -c "Joao da Silva" -s /bin/bash -p $(openssl passwd -crypt senha123)
+	- ex: useradd joao -m -c "Joao da Silva" -s /bin/bash -p $(openssl passwd -crypt senha123) -G GRP_ADM
 
-* alterar usuário - usermod - mesmos comandos de useradd -m -s
+* Alterar usuário - usermod - mesmos comandos de useradd -m -s
 	
 	- -G - adm,sudo nomedousuario - define o grupo ao qual o usuário tem acesso
+	- ex: usermod -G GRP_ADM joao; usermod -G GPR_VEN maria;
 
-* cadastrar senha - passwd nomedousuário -e "define a expiração da senha se não definir a data expira na hora"
+* Cadastrar senha - passwd nomedousuário -e "define a expiração da senha se não definir a data expira na hora"
 
-* excluir usuário - userdel -f -r "nomedousuario"
+* Excluir usuário - userdel -f -r "nomedousuario"
 	- parâmetros: 	
  	- -f - força a exclusão
 	- -r - remove a pasta usuário de /home
 
-* definir shell do usuário se não foi definido na criação - chsh -s /bin/bash nomedousuario
+* Definir shell do usuário se não foi definido na criação - chsh -s /bin/bash nomedousuario
+* Criar grupos de usuários - groupadd nomedogrupo - Ex: groupadd GRP_ADM - groupadd GRP_VEN
+	Quando dá uma permissão a um grupo todos os usuários daquele grupo tem essa permissão.
+* Excluir grupo - groupdel nomedogrupo - O mesmo precisa estar vazio.
+* Excluir usuário do grupo - gpasswd -d nomedousuário nomedogrupo - ex: gpasswd -d joao sudo; gpasswd -d maria GRP_VEN
+
+# Permissões
+ls -l - exibe as atributos dos arquivos e pastas do diretório em questão
+* drwxrwxrwx - r reade(ler) - w write(alterar escrever) x execute(exutar)
+* Primeiro caracter indica se é um diretório d ou um arquivo -
+* São 9 caracteres após o que define se é arquivo ou usuário:
+	- Três próximos indicam a permissão do dono do arquivo/pasta wrx
+	- Três intermediários a permissão do grupo sobre o arquivo/pasta wrx
+	- Três finais a permissão de qualquer usuário wrx
+	- ex: -rw-r--r-- 
+*  
+	 
+	
 
