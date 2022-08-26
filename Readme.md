@@ -28,21 +28,27 @@ Usuários no servidor linux realizam manutenções ou consomem recursos do mesmo
 * listar grupos - cat /etc/group
 * criptografar uma senha - openssl passwd -crypt senha 
 * criar usuário - useradd nomedousuario - não cria pasta do usuário nem define senha.
-parâmetros: 	-m - cria a pasta home do usuário
-		-c - define o nome do usuário "Nome do Usuário" pode ser a função deste usuário "acessaarquivo"
-		-p - define a senha/password
-		-s - padrão é "/bin/bash" define o shell padrão
-		-e - define data de expiração do usuário
-		-p - definir senha - $(openssl passwd -crypt senha123) - abre e fecha parenteses depois do cifrão.
+
+	- parâmetros:
+	- -m - cria a pasta home do usuário
+	- -c - define o nome do usuário "Nome do Usuário" pode ser a função deste usuário "acessaarquivo"
+	- -p - define a senha/password
+	- -s - padrão é "/bin/bash" define o shell padrão
+	- -e - define data de expiração do usuário
+	- -p - definir senha - $(openssl passwd -crypt senha123) - abre e fecha parenteses depois do cifrão.
+	
+	- ex: useradd joao -m -c "Joao da Silva" -s /bin/bash -p $(openssl passwd -crypt senha123)
 
 * alterar usuário - usermod - mesmos comandos de useradd -m -s
-		-G - adm,sudo nomedousuario
+	
+	- -G - adm,sudo nomedousuario - define o grupo ao qual o usuário tem acesso
 
 * cadastrar senha - passwd nomedousuário -e "define a expiração da senha se não definir a data expira na hora"
 
-* excluir usuário - userdel -f "nomedousuario"
-parâmetros: 	-f - força a exclusão
-		-r - remove a pasta usuário de /home
+* excluir usuário - userdel -f -r "nomedousuario"
+	- parâmetros: 	
+ 	- -f - força a exclusão
+	- -r - remove a pasta usuário de /home
 
 * definir shell do usuário se não foi definido na criação - chsh -s /bin/bash nomedousuario
 
