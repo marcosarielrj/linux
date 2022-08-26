@@ -18,8 +18,9 @@
 
 # Scripts:
 
-* para criar um script - a extensão do arquivo tem que ser .sh
+* para criar um script - a extensão do arquivo tem que ser .sh - ao criar o mesmo fica sem permissão de execução necessário alterar a permissão.
 * primeira - linha de scripts tem que ser #!/bin/bash
+* para executar um script - ./nomedoscript.sh
 
 # Gerenciando usuários:
 
