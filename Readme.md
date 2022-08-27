@@ -127,4 +127,14 @@ Sistemas de arquivos é um padrão, uma forma como o sistema operacional usa par
 * /mnt/ - pasta onde ficam as partições montadas - para montar um disco criar uma pasta no mnt - depois mount /dev/sdb /mnt/disco2 - caminho do disco capinho da pasta onde ficará montado o disco. Para desmontar umount /dev/sdb - caminho do disco.
 * Montar automaticamente os discos - nano /etc/fstab - adiciona uma linha com /dev/sdb(caminho do disco) /disk2/(caminho da pasta onde será montado) ext4(sistema de arquivos) defaults 0 0 - salvar.
 
+# Infraestrutura como código - IaC
+É o gerenciamento e provisionamento da infraestrutura por meio de códigos em vez de processos manuais, são criados arquivos de configuração que incluem as especificações da sua infraestrutura, facilitando a edição e a distribuição de configurações assegurando o provisionamento do mesmo ambiente todas as vezes.
+* Controle de Versão
+* Principais Benefícios do IaC
+	- Automatizar o provisionamento da infraestrutura
+	- Não necessidade de provisionar manualmente servidores, SO's, armazenamento, e outros componentes de infra ao criar/implementar uma aplicação. 
 
+* Projeto -
+
+![image](https://user-images.githubusercontent.com/28981742/187033875-bd2502d7-a5f7-4781-b75c-9cb26d7629a3.png)
+![image](https://user-images.githubusercontent.com/28981742/187033924-4ee768a3-127f-4b59-83ee-479e261b43b5.png)
