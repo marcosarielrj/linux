@@ -18,6 +18,9 @@
 * mkdir - cria uma pasta
 * cd - abre uma pasta - cd .. abri uma pasta um nível acima
 * rm - remove um arquivo/pasta - ex: rm teste.txt
+* cp - copiar arquivos -
+	- cp /home/user/nomedoarquivo /pastadestino
+	- cp "/pasta/(*).txt /kalsdf
 
 # Scripts:
 
