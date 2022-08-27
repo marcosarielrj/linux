@@ -8,6 +8,7 @@
 * comando --help acessa ajuda do comando
 * nano - editor de texto padrão - nano nomedoarquivo - para criar/abrir um arquivo de texto usando o editor
 * touch - cria um arquivo - ex: touch teste.txt
+* ip a - mostra propriedades de rede, antigo ifconfig.
 
 # Manipular pastas e arquivos: 
 
@@ -75,6 +76,21 @@ ls -l - exibe as atributos dos arquivos e pastas do diretório em questão
 	- Leitura(R) valor 4 / Gravação(W) valor 2 / Execução(X) valor 1 / Nenhum(-) valor 0 
 	- Somasse os valores ao definir - dono/grupo/todos - ex: 750
 	- chmod dono/grupo/todos /pasta/ - ex: chmode 750 /teste/ - o dono tem todas porque soma os valores 4+2+1, o grupo tem leitura e execução 4+1, e todos tem nenhuma permissão 0
-	- 
-	 
+	- atribuir/retirar execução ao arquivo para o dono do mesmo - chmod +x - chmod -x
+
+# Gerenciador de pacotes
+Instala, atualiza, remove pacotes.
+Pacote pode ser um software, um driver, um codec.
+Cuidado ao realizar atualização instalação, fazer backup antes.
+* apt-get - mais baixo nível, mais usado para scripts, necessita informações precisas.
+	- -update - atualiza a lista de pacotes.
+	- -upgrade - ecuta atualização dos pacotes instalados.
+	- -install - instala novos pacotes
+	- -reinstall - reinstala pacotes
+	...
+	
+* apt - mais moderno, interação mais amigável
+	- list - mostra todos os pacotes disponíveis no servidor da ubunt.
+	- list --instaled - os que estão instalados na máquina.
+	- list --upgradeable - mostra os pacotes que podem ser atualizados.
 
