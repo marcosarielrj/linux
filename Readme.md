@@ -11,6 +11,13 @@
 * ip a - mostra propriedades de rede, antigo ifconfig.
 * wget - baixar arquivos da internet - ex: wget https://github.com/marcosarielrj/linuxexperience/archive/refs/heads/main.zip
 * unzip - descompacta arquivos .zip - apt install unzip - ex: unzip main.zip
+* ps - mostra os processos que estão sendo executados.
+	- ps a - mostra o processo de todos os usuários
+	- ps u - fornece o nome do usuário e a hora que iniciou o processo.
+	- ps x - processos chamados fora do console.
+	- ps aux
+* kill - mata um processo - kill piddoprocesso - killall chrome - mata todos os processos do chrome.
+* w - mostra os usuários logados - who -a mostra mais informações dos usuários logados.
 
 # Manipular pastas e arquivos: 
 
@@ -20,7 +27,12 @@
 * rm - remove um arquivo/pasta - ex: rm teste.txt
 * cp - copiar arquivos -
 	- cp /home/user/nomedoarquivo /pastadestino
-	- cp "/pasta/(*).txt /kalsdf
+	- cp "/pasta/*.txt* /pastadestino - copia todos os arquivos com extensão.txt
+	- cp /pastaorigem/a* /pastadestino - copia todos os arquivos q iniciam com a letra a.
+	- cp /pastaorigem /pastadestino -i - para que o cp pergunte quando há arquivos com o mesmo nome o que fazer.
+	- cp -r - copia arquivos e pastas.
+	- cp -v - mostra o status do processo
+* mv - mover e renomear arquivos - mv /pastaorigem/arquivo /pastadestino
 
 # Scripts:
 
