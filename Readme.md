@@ -3,12 +3,14 @@
 # Comandos linux
 
 * sudo su - acessa root.
-* su nomedousuário - loga no usuário
+* su nomedousuário - loga no usuário - ex: su joao - loga no usuário joao
 * cat - exibe um arquivo - ex: cat teste.txt
-* comando --help acessa ajuda do comando
+* comando --help acessa ajuda do comando ex: apt --help
 * nano - editor de texto padrão - nano nomedoarquivo - para criar/abrir um arquivo de texto usando o editor
 * touch - cria um arquivo - ex: touch teste.txt
 * ip a - mostra propriedades de rede, antigo ifconfig.
+* wget - baixar arquivos da internet - ex: wget https://github.com/marcosarielrj/linuxexperience/archive/refs/heads/main.zip
+* unzip - descompacta arquivos .zip - apt install unzip - ex: unzip main.zip
 
 # Manipular pastas e arquivos: 
 
@@ -79,18 +81,35 @@ ls -l - exibe as atributos dos arquivos e pastas do diretório em questão
 	- atribuir/retirar execução ao arquivo para o dono do mesmo - chmod +x - chmod -x
 
 # Gerenciador de pacotes
+Nos sistemas baseados em Debian/Ubuntu usa-se o apt e o apt-get. Nos sistemas baseados Fedora/RedHat/CentOs usa-se dnf e yum.
+Para instalar um aplicativo no ambiente gráfico utiliza a extensão .deb.
 Instala, atualiza, remove pacotes.
 Pacote pode ser um software, um driver, um codec.
-Cuidado ao realizar atualização instalação, fazer backup antes.
+Cuidado ao realizar atualização instalação, fazer backup antes. Se o servidor estiver em ambiente de produção, sempre necessário usar um ambiente de teste.
 * apt-get - mais baixo nível, mais usado para scripts, necessita informações precisas.
-	- -update - atualiza a lista de pacotes.
-	- -upgrade - ecuta atualização dos pacotes instalados.
-	- -install - instala novos pacotes
-	- -reinstall - reinstala pacotes
+	- update - atualiza a lista de pacotes.
+	- upgrade - ecuta atualização dos pacotes instalados.
+	- install - instala novos pacotes
+	- reinstall - reinstala pacotes
+	- remove - remove um pacote - -y remove sem perguntar nada.
 	...
 	
 * apt - mais moderno, interação mais amigável
 	- list - mostra todos os pacotes disponíveis no servidor da ubunt.
 	- list --instaled - os que estão instalados na máquina.
 	- list --upgradeable - mostra os pacotes que podem ser atualizados.
+	- update - verifica a lista de pacotes a atualizar.
+	- apt -install arquivo.deb - instala arquivos de um executável.
+	
+# Gerenciamento de Discos
+Sistemas de arquivos é um padrão, uma forma como o sistema operacional usa para controlar como os dados são armazenados e recuperados.
+* Windows - NTFS - FAT32
+* Linux - Debian/Ubuntu ext4 - Fedora/Red Hat XFS.
+* Discos no Linux são descritos no sistemas como sda, sdb, sdc - a,b,c para a quantidade de discos. E as partições com número a frente do disco: sda1, sda2, sda3, sdb1, sdb2 ...
+* Comandos para ver os discos no linux - lsblk - fdisl -l
+* Criando uma partição - fdisk /dev/sdx - já no fdisk opções n(nova partição), p(primária), nº 1 a 4, setores padrão, w para salvar e sair.
+* Formatando a partição criada - mkfs.sistemadearquivos /dev/sdx (caminho do disco) - ex: mkfs.ntfs /dev/sdb - mkfs.ext4 /dev/sdc
+* /mnt/ - pasta onde ficam as partições montadas - para montar um disco criar uma pasta no mnt - depois mount /dev/sdb /mnt/disco2 - caminho do disco capinho da pasta onde ficará montado o disco. Para desmontar umount /dev/sdb - caminho do disco.
+* Montar automaticamente os discos - nano /etc/fstab - adiciona uma linha com /dev/sdb(caminho do disco) /disk2/(caminho da pasta onde será montado) ext4(sistema de arquivos) defaults 0 0 - salvar.
+
 
